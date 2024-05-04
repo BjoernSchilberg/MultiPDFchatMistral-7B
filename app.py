@@ -71,6 +71,7 @@ def create_conversational_chain(vector_store):
         model_path="mistral-7b-instruct-v0.1.Q4_K_M.gguf",
         temperature=0.75,
         top_p=1,
+        n_gpu_layers = 15000,  # Change this value based on your model and your GPU VRAM pool.
         verbose=True,
         n_ctx=4096,
     )
@@ -121,7 +122,7 @@ def main():
         # https://www.sbert.net/
         embeddings = HuggingFaceEmbeddings(
             model_name="sentence-transformers/all-MiniLM-L6-v2",
-            model_kwargs={"device": "cpu"},
+            model_kwargs={"device": "cuda"},
         )
 
         # Create vector store
