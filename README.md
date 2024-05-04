@@ -22,6 +22,7 @@ pip3 install huggingface-hub
 huggingface-cli download TheBloke/Mistral-7B-Instruct-v0.1-GGUF mistral-7b-instruct-v0.1.Q4_K_M.gguf --local-dir . --local-dir-use-symlinks False
 ```
 
+Or alternatively:
 
 ```shell
 curl -L https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF/resolve/main/mistral-7b-instruct-v0.1.Q4_K_M.gguf\?download\=true -o mistral-7b-instruct-v0.1.Q4_K_M.gguf
